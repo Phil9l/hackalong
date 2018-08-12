@@ -11,5 +11,16 @@ export const environment = {
     contests: {
       all: '/contests/all.json'
     }
+  },
+  auth: {
+    tokenKey: 'AUTH_TOKEN'
+  },
+  firebase: {
+    apiKey: 'AIzaSyAjPYQBCOs6F8MtW-A3coEMkyT3leKhTkY',
+    authDomain: 'hackalong-2018-2f913.firebaseapp.com',
+    databaseURL: 'https://hackalong-2018-2f913.firebaseio.com',
+    projectId: 'hackalong-2018-2f913',
+    storageBucket: 'hackalong-2018-2f913.appspot.com',
+    messagingSenderId: '1059177428180'
   }
 };

@@ -1,0 +1,24 @@
+{
+  "name": "Focus Block",
+  "issues": [
+    {
+      "id": 123,
+      "title": "Fix the bug",
+      "points": 123
+    }
+  ],
+  "participants": [
+    {
+      "id": 12,
+      "name": "phil9l",
+      "points": 123
+    },
+    {
+      "id": 12,
+      "name": "phil9l",
+      "points": 123
+    }
+  ],
+  "deadline": 1534026665905,
+  "description": "Show me your love!"
+}

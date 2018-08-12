@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { GithubAppService } from '../common/services/app/github.app.service';
+import { GithubAppService } from '../common/services/app/github/github.app.service';
+import { Contests } from '../common/entities/contests';
 
 @Component({
   selector: 'app-contests',
@@ -12,8 +13,7 @@ export class ContestsComponent {
     this.getContests();
   }
 
-  async getContests() {
-    const contests = await this.githubService.getContests();
-    console.log('contests', contests);
+  async getContests(): Promise<Contests> {
+    return await this.githubService.getContests();
   }
 }

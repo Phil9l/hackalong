@@ -1,10 +1,22 @@
-[
-  {
-    "id": 21,
-    "title": "Name of contest"
-  },
-  {
-    "id": 12,
-    "title": "Something new"
-  }
-]
+{
+  "opened": [
+    {
+      "id": 21,
+      "title": "Name of contest"
+    },
+    {
+      "id": 12,
+      "title": "Something new"
+    }
+  ],
+  "closed": [
+    {
+      "id": 21,
+      "title": "Buy new Macbook"
+    },
+    {
+      "id": 2123,
+      "title": "Go to the London"
+    }
+  ]
+}
