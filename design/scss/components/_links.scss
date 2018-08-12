@@ -1,0 +1,9 @@
+@mixin link {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: $blue;
+  }
+}

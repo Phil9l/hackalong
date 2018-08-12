@@ -1,0 +1,36 @@
+.front-page {
+  margin-bottom: 40px;
+
+  @include for-tablet-landscape-up {
+    margin-bottom: 80px;
+  }
+}
+
+.front-page__header {
+  @include h1;
+}
+
+.front-page__subheader {
+  margin-top: 32px;
+  font-size: 20px;
+}
+
+.front-page__actions {
+  margin-top: 40px;
+
+  .button {
+    display: block;
+    width: 280px;
+    margin-bottom: 20px;
+  }
+
+  @include for-tablet-landscape-up {
+    margin-top: 80px;
+
+    .button {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 32px;
+    }
+  }
+}

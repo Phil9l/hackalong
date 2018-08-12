@@ -1,0 +1,40 @@
+.modal {
+  @include for-tablet-landscape-up {
+    margin-top: 240px;
+  }
+}
+
+.modal__text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 30px;
+
+  @include for-tablet-landscape-up {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+
+.modal__actions {
+
+  .button {
+    display: block;
+    width: 280px;
+    margin-bottom: 20px;
+  }
+
+  @include for-tablet-landscape-up {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+
+    .button {
+      display: inline-block;
+      margin: 0 16px;
+    }
+
+    .button--secondary {
+      order: -1;
+    }
+  }
+}

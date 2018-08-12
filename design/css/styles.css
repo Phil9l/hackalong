@@ -1,0 +1,320 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.button {
+  padding: 17px 24px 15px;
+  border: none;
+  outline: none;
+  border-radius: 9001px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #435FD8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+
+.button:hover {
+  background-color: #2844c0;
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button--secondary {
+  border: 2px solid #435FD8;
+  background-color: white;
+  color: #435FD8;
+  transition: color 0.1s linear, border-color 0.1s linear;
+}
+
+.button--secondary:hover {
+  color: #2844c0;
+  border-color: #2844c0;
+  background-color: white;
+}
+
+.contest-list {
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .contest-list {
+    margin-top: 80px;
+  }
+}
+
+.contest-list__header {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
+.contest {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.contest__image {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  margin-right: 24px;
+}
+
+.contest__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.contest--finished .contest__image {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.contest__name {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+  margin-top: -2px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contest__name:hover {
+  color: #435FD8;
+}
+
+.contest__info {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+@media (min-width: 900px) {
+  .modal {
+    margin-top: 240px;
+  }
+}
+
+.modal__text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media (min-width: 900px) {
+  .modal__text {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+
+.modal__actions .button {
+  display: block;
+  width: 280px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .modal__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  .modal__actions .button {
+    display: inline-block;
+    margin: 0 16px;
+  }
+  .modal__actions .button--secondary {
+    order: -1;
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboard {
+    margin-top: 200px;
+  }
+}
+
+.dashboard__header {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.dashboard__subheader {
+  font-size: 20px;
+}
+
+.dashboard__subheader span {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.dashboard__subheader span:hover {
+  color: #435FD8;
+}
+
+.dashboard__actions {
+  margin: 40px 0;
+}
+
+.dashboard__actions button {
+  width: 280px;
+}
+
+@media (min-width: 900px) {
+  .dashboard__actions {
+    margin: 80px 0;
+  }
+}
+
+.app {
+  margin: 32px;
+}
+
+@media (min-width: 600px) {
+  .app {
+    margin: 64px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app {
+    max-width: 800px;
+    margin: 160px auto;
+  }
+}
+
+.app__logo {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 80px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #D8D8D8;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.app__logo:hover {
+  color: #435FD8;
+}
+
+@media (min-width: 900px) {
+  .app__logo {
+    display: block;
+  }
+}
+
+.front-page {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .front-page {
+    margin-bottom: 80px;
+  }
+}
+
+.front-page__header {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.front-page__subheader {
+  margin-top: 32px;
+  font-size: 20px;
+}
+
+.front-page__actions {
+  margin-top: 40px;
+}
+
+.front-page__actions .button {
+  display: block;
+  width: 280px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .front-page__actions {
+    margin-top: 80px;
+  }
+  .front-page__actions .button {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+}
+
+html, body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}

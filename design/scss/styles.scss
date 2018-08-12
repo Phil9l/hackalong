@@ -1,0 +1,19 @@
+@import "base/module";
+@import "components/module";
+@import "layout/module";
+
+html, body {
+  box-sizing: border-box;
+  font-family: $font-family;
+  text-rendering: optimizeLegibility;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.dashboard {
+  @include for-tablet-landscape-up {
+    margin-top: 200px;
+  }
+}
+
+.dashboard__header {
+  @include h2;
+  margin-bottom: 24px;
+}
+
+.dashboard__subheader {
+  font-size: 20px;
+
+  span {
+    @include link;
+  }
+}
+
+.dashboard__actions {
+  margin: 40px 0;
+
+  button {
+    width: 280px;
+  }
+
+  @include for-tablet-landscape-up {
+    margin: 80px 0;
+  }
+}

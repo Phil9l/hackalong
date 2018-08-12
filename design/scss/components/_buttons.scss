@@ -1,0 +1,35 @@
+.button {
+  padding: 17px 24px 15px;
+  border: none;
+  outline: none;
+  border-radius: 9001px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: $font-regular;
+  background-color: $blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.button--secondary {
+  border: 2px solid $blue;
+  background-color: white;
+  color: $blue;
+  transition: color 0.1s linear, border-color 0.1s linear;
+
+  &:hover {
+    color: darken($blue, 10%);
+    border-color: darken($blue, 10%);
+    background-color: white;
+  }
+}
