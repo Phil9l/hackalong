@@ -1,0 +1,32 @@
+.app {
+  margin: 32px;
+
+  @include for-tablet-portrait-up {
+    margin: 64px;
+  }
+
+  @include for-tablet-landscape-up {
+    max-width: 800px;
+    margin: 200px auto;
+  }
+}
+
+.app__logo {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 80px;
+  font-size: 24px;
+  font-weight: $font-bold;
+  color: $lightgray;
+  cursor: pointer;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: $blue;
+  }
+
+  @include for-tablet-landscape-up {
+    display: block;
+  }
+}

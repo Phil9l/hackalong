@@ -1,0 +1,15 @@
+.repo-element {
+  margin-top: 32px;
+}
+
+.repo-element__title {
+  @include link;
+  display: block;
+  font-size: 20px;
+}
+
+.repo-element__info {
+  margin-top: 12px;
+  font-size: 16px;
+  color: $gray;
+}

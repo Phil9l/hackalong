@@ -1,0 +1,655 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.button {
+  padding: 17px 24px 15px;
+  border: none;
+  outline: none;
+  border-radius: 9001px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #435FD8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+
+.button:hover {
+  background-color: #2844c0;
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button--secondary {
+  border: 2px solid #435FD8;
+  background-color: white;
+  color: #435FD8;
+  transition: color 0.1s linear, border-color 0.1s linear;
+}
+
+.button--secondary:hover {
+  color: #2844c0;
+  border-color: #2844c0;
+  background-color: white;
+}
+
+.input {
+  padding: 21px 16px 19px;
+  border: 1px solid #9E9E9E;
+  border-radius: 2px;
+  outline: none;
+  font-size: 20px;
+  background-color: white;
+  transition: border-color 0.1s linear;
+}
+
+.input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input::-webkit-input-placeholder {
+  color: #9E9E9E;
+}
+
+.input:-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.input::-ms-input-placeholder {
+  color: #9E9E9E;
+}
+
+.input::placeholder {
+  color: #9E9E9E;
+}
+
+.input:focus {
+  border-color: #435FD8;
+}
+
+.textarea {
+  width: 100%;
+  max-width: 720px;
+  min-height: 240px;
+}
+
+.contest-list {
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .contest-list {
+    margin-top: 80px;
+  }
+}
+
+.contest-list__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 48px;
+}
+
+.contest-element {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.contest-element__image {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  margin-right: 24px;
+}
+
+.contest-element__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.contest-element--finished .contest-element__image {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.contest-element__name {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+  margin-top: -2px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contest-element__name:hover {
+  color: #435FD8;
+}
+
+.contest-element__info {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+@media (min-width: 900px) {
+  .modal {
+    margin-top: 240px;
+  }
+}
+
+.modal__text {
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media (min-width: 900px) {
+  .modal__text {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+
+.modal__actions .button {
+  display: block;
+  width: 280px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .modal__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  .modal__actions .button {
+    display: inline-block;
+    margin: 0 16px;
+  }
+  .modal__actions .button--secondary {
+    order: -1;
+  }
+}
+
+.issue-list {
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .issue-list {
+    margin-top: 80px;
+  }
+}
+
+.issue-list__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.issue-list__subheader {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+.issue-list__subheader span {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.issue-list__subheader span:hover {
+  color: #435FD8;
+}
+
+.issue-element {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.issue-element__points {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  background-color: #435FD8;
+}
+
+.issue-element--editable .issue-element__points {
+  display: flex;
+  justify-content: space-between;
+  width: 104px;
+  margin-right: 24px;
+  line-height: 43px;
+}
+
+.issue-element--editable .issue-element__points span {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 4px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+
+.issue-element--editable .issue-element__points span:hover {
+  background-color: #2844c0;
+}
+
+.issue-element--zero-points .issue-element__points {
+  background-color: #D8D8D8;
+  color: #000000;
+}
+
+.issue-element--zero-points .issue-element__points span {
+  transition: background-color 0.1s linear, color 0.1s linear;
+}
+
+.issue-element--zero-points .issue-element__points span:hover {
+  background-color: #435FD8;
+  color: white;
+}
+
+.issue-element--zero-points .issue-element__points span:first-child {
+  color: #9E9E9E;
+  cursor: default;
+}
+
+.issue-element--zero-points .issue-element__points span:first-child:hover {
+  background-color: transparent;
+}
+
+.issue-element__title {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+  display: block;
+  font-size: 20px;
+}
+
+.issue-element__title:hover {
+  color: #435FD8;
+}
+
+.issue-element__info {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+.create-field {
+  margin-top: 64px;
+}
+
+.create-field__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.create-field__info {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+.create-field__content {
+  margin-top: 40px;
+}
+
+.repo-element {
+  margin-top: 32px;
+}
+
+.repo-element__title {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+  display: block;
+  font-size: 20px;
+}
+
+.repo-element__title:hover {
+  color: #435FD8;
+}
+
+.repo-element__info {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #9E9E9E;
+}
+
+.app {
+  margin: 32px;
+}
+
+@media (min-width: 600px) {
+  .app {
+    margin: 64px;
+  }
+}
+
+@media (min-width: 900px) {
+  .app {
+    max-width: 800px;
+    margin: 200px auto;
+  }
+}
+
+.app__logo {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 80px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #D8D8D8;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.app__logo:hover {
+  color: #435FD8;
+}
+
+@media (min-width: 900px) {
+  .app__logo {
+    display: block;
+  }
+}
+
+.front-page {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .front-page {
+    margin-bottom: 80px;
+  }
+}
+
+.front-page__header {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.front-page__subheader {
+  margin-top: 32px;
+  font-size: 20px;
+}
+
+.front-page__actions {
+  margin-top: 40px;
+}
+
+.front-page__actions .button {
+  display: block;
+  width: 280px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .front-page__actions {
+    margin-top: 80px;
+  }
+  .front-page__actions .button {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+}
+
+.dashboard__header {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 24px;
+}
+
+.dashboard__subheader {
+  font-size: 20px;
+}
+
+.dashboard__subheader span {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.dashboard__subheader span:hover {
+  color: #435FD8;
+}
+
+.dashboard__actions {
+  margin: 40px 0;
+}
+
+.dashboard__actions button {
+  width: 280px;
+}
+
+@media (min-width: 900px) {
+  .dashboard__actions {
+    margin: 80px 0;
+  }
+}
+
+.contest-header {
+  display: flex;
+}
+
+.contest-header__image {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  margin-right: 32px;
+}
+
+.contest-header__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.contest-header__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-top: 8px;
+}
+
+.contest-header__info {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.contest-header__info a {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.contest-header__info a:hover {
+  color: #435FD8;
+}
+
+.contest-deadline {
+  display: flex;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.contest-deadline__icon {
+  flex-shrink: 0;
+  width: 24px;
+  margin-right: 16px;
+}
+
+.contest-deadline__icon svg {
+  fill: #D8D8D8;
+}
+
+.contest-deadline__text {
+  font-size: 20px;
+  color: #9E9E9E;
+}
+
+.contest-description {
+  margin-top: 48px;
+}
+
+.contest-description__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.contest-description__content {
+  margin-top: 24px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.contest-leaderboard {
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .contest-leaderboard {
+    margin-top: 80px;
+  }
+}
+
+.contest-leaderboard__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 40px;
+}
+
+.contest-leaderboard__element {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contest-leaderboard__element span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: 2px solid #435FD8;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  color: #435FD8;
+}
+
+.contest-leaderboard__element a {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.1s linear;
+  font-size: 20px;
+}
+
+.contest-leaderboard__element a:hover {
+  color: #435FD8;
+}
+
+.create-header {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.create-button {
+  margin-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .create-button {
+    margin-top: 80px;
+  }
+}
+
+.create-button .button {
+  width: 280px;
+}
+
+html, body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.create-field {
+  margin-top: 64px;
+}
+
+.create-field__title {
+  @include h3;
+}
+
+.create-field__info {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: $gray;
+}
+
+.create-field__content {
+  margin-top: 40px;
+}

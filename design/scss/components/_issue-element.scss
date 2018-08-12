@@ -1,0 +1,72 @@
+.issue-element {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.issue-element__points {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  background-color: $blue;
+
+  .issue-element--editable & {
+    display: flex;
+    justify-content: space-between;
+    width: 104px;
+    margin-right: 24px;
+    line-height: 43px;
+
+    span {
+      display: inline-block;
+      padding: 12px;
+      border-radius: 4px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: background-color 0.1s linear;
+      
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+    }
+  }
+
+  .issue-element--zero-points & {
+    background-color: $lightgray;
+    color: $black;
+
+    span {
+      transition: background-color 0.1s linear, color 0.1s linear;
+
+      &:hover {
+        background-color: $blue;
+        color: white;
+      }
+
+      &:first-child {
+        color: $gray;
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.issue-element__title {
+  @include link;
+  display: block;
+  font-size: 20px;
+}
+
+.issue-element__info {
+  margin-top: 12px;
+  font-size: 16px;
+  color: $gray;
+}

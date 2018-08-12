@@ -1,0 +1,15 @@
+.create-header {
+  @include h2;
+}
+
+.create-button {
+  margin-top: 40px;
+
+  @include for-tablet-landscape-up {
+    margin-top: 80px;
+  }
+
+  .button {
+    width: 280px;
+  }
+}
