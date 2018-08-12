@@ -1,0 +1,22 @@
+.issue-list {
+  margin-top: 40px;
+  
+  @include for-tablet-landscape-up {
+    margin-top: 80px;
+  }
+}
+
+.issue-list__header {
+  @include h3;
+}
+
+.issue-list__subheader {
+  margin-top: 24px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: $gray;
+
+  span {
+    @include link;
+  }
+}

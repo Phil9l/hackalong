@@ -8,14 +8,17 @@ $font-bold-italic: 700i;
 @mixin h1 {
   font-size: 56px;
   font-weight: $font-bold;
+  line-height: 120%;
 }
 
 @mixin h2 {
   font-size: 48px;
   font-weight: $font-bold;
+  line-height: 120%;
 }
 
 @mixin h3 {
   font-size: 32px;
   font-weight: $font-bold;
+  line-height: 120%;
 } 
