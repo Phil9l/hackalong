@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { firestore } from 'firebase';
+import { Contest } from '../common/entities/contest';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  finished: Contest[];
+  active: Contest[];
+
+  constructor() {
+    firestore().collection('contests').get().then(snapshot => {
+      snapshot.forEach((doc) => {
+        console.log(doc.id, '=>', doc.data());
+        switch (doc.data().finished) {
+          case true:
+            this.finished.push(new Contest(doc.data()));
+            break;
+          case false:
+            this.active.push(new Contest(doc.data()));
+            break;
+          default:
+            break;
+        }
+      });
+    })
+  }
 }

@@ -49,7 +49,9 @@ export class BaseDataService {
         headers = {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
+          'Access-Control-Allow-Origin': 'gitbattle.win:8080',
+          'Access-Control-Allow-Headers': '*',
+          'Access-Control-Allow-Credentials': 'true'
         };
       }
     }

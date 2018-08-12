@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GithubAppService } from '../common/services/app/github/github.app.service';
 import { Contests } from '../common/entities/contests';
+import { Contest } from '../common/entities/contest';
 
 @Component({
   selector: 'app-contest',
@@ -8,6 +9,7 @@ import { Contests } from '../common/entities/contests';
   styleUrls: ['./contest.component.scss']
 })
 export class ContestComponent {
+  @Input() contest: Contest;
 
   constructor(private githubService: GithubAppService) {
     this.getContests();

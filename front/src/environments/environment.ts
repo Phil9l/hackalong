@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://172.21.145.244:8080/api',
+  apiBaseUrl: 'http://gitbattle.win:8080/api',
   mockAnyRequestAsGet: false,
   apiUrls: {
     contests: {

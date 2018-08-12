@@ -13,22 +13,16 @@
   .issue-list__subheader
     | Selected Pixelogicdev/FocusBlock as a contest repo.
     span Select a different one
-  .issue-element.issue-element--editable
+
+  .issue-element.issue-element--editable(*ngFor='let item of issues')
     .issue-element__points
       span –
-      |           2
+      | {{item.points}}
       span +
     .issue-element__right
-      a.issue-element__title(href='https://github.com/Phil9l/hackalong/issues/1') Fix a bug
-      .issue-element__info Opened on Aug 11
-  .issue-element.issue-element--editable.issue-element--zero-points
-    .issue-element__points
-      span –
-      |           0
-      span +
-    .issue-element__right
-      a.issue-element__title(href='https://github.com/Phil9l/hackalong/issues/1') Fix a bug
-      .issue-element__info Opened on Aug 11
+      a.issue-element__title(href='{{item.link}}') {{item.title}}
+      .issue-element__info {{item.date}}
+
 .create-field
   .create-field__title Set deadline for this event
   .create-field__info You will not be able to edit this later
