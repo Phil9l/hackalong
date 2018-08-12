@@ -32,8 +32,6 @@ export class BaseDataService {
     url = `${environment.apiBaseUrl}${url}`;
     url += '?';
     url += Object.keys(params).map(key => key + '=' + params[key]).join('&');
-    // Anti-cache
-    url += (!url.includes('?') ? '?' : '&') + `_=${DateUtils.now()}`;
 
     console.log('do request with url:', url);
 
@@ -48,10 +46,7 @@ export class BaseDataService {
         body = JSON.stringify(data);
         headers = {
           'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'gitbattle.win:8080',
-          'Access-Control-Allow-Headers': '*',
-          'Access-Control-Allow-Credentials': 'true'
+          'Content-Type': 'application/json'
         };
       }
     }
