@@ -73,7 +73,7 @@ export class BaseDataService {
       body = undefined;
     }
 
-    return fetch(url, { method, headers, body, mode: 'no-cors' })
+    return fetch(url, { method, headers, body })
       .then(response => {
         if (response.ok) {
           return response.json();

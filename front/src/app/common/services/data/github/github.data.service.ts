@@ -6,8 +6,8 @@ import { Repository } from '../../../entities/repository';
 
 export class GithubDataService extends BaseDataService {
 
-  getIssues(): Promise<Issue[]> {
-    return this.get(environment.apiUrls.issues);
+  getIssues(params): Promise<Issue[]> {
+    return this.get(environment.apiUrls.repositories, params);
   }
 
   async getRepositories(params): Promise<Repository[]> {

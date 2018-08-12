@@ -33,11 +33,12 @@
   .create-field__title Set deadline for this event
   .create-field__info You will not be able to edit this later
   .create-field__content
-    input.input(type='date', value='10 Nov 2018')
+    input.input(type='date', [(ngModel)]='deadline')
 .create-field
   .create-field__title Add description
   .create-field__info Markdown is supported
   .create-field__content
-    textarea.input.textarea(placeholder='Tell people about rules, prizes, etc.')
+    textarea.input.textarea(placeholder='Tell people about rules, prizes, etc.', [(ngModel)]='description')
 .create-button
-  button.button Create contest
+  div(*ngIf='!isComplete') Please, fill all forms
+  button.button((click)='createContest()', *ngIf='isComplete') Create contest

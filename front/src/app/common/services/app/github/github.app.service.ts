@@ -10,8 +10,8 @@ export class GithubAppService {
   constructor(private dataService: GithubDataService) {
   }
 
-  getIssues(): Promise<Issue[]> {
-    return this.dataService.getIssues();
+  getIssues(owner, repository): Promise<Issue[]> {
+    return this.dataService.getIssues({ owner, repository });
   }
 
   getRepositories(owner, token): Promise<Repository[]> {
