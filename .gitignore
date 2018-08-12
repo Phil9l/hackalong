@@ -1,4 +1,4 @@
 .idea
 .DS_Store
-*.html
+front/*.html
 design/node_modules
