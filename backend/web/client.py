@@ -39,7 +39,7 @@ class WebClient:
         token = request.rel_url.query.get('token')
         client = GithubAPI(token=token)
         data = request.rel_url.query
-        result = await client.get_issues(data.get('owner'), data.get('repository'))
+        result = await client.create_hook(data.get('owner'), data.get('repository'))
         return web.json_response(result)
 
     async def _hook(self, request: web.Request) -> web.Response:
@@ -57,6 +57,6 @@ class WebClient:
             web.get('/api/repositories', self._repositories),
             web.get('/api/user', self._user),
             web.get('/api/register', self._register),
-            web.get('/hook', self._hook)
+            web.post('/hook', self._hook)
         ])
         web.run_app(app, host=hostname, port=port)
