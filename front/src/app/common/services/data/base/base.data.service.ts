@@ -2,7 +2,6 @@ import { environment } from '../../../../../environments/environment';
 import { RequestMethodType } from '../../../enums/request-method.enum';
 import { RequestOptions } from '../../../types/request-options';
 import { StorageKeyType } from '../../../enums/storage-key-type';
-import { DateUtils } from '../../../utils/date/date.utils';
 
 export class BaseDataService {
 
@@ -69,6 +68,8 @@ export class BaseDataService {
       method = 'GET';
       body = undefined;
     }
+
+    console.log({ method, headers, body });
 
     return fetch(url, { method, headers, body })
       .then(response => {
