@@ -1,15 +1,22 @@
 .repo-element {
-  margin-top: 32px;
+    margin-top: 32px;
+    opacity: .8;
+    transition: .1s linear all;
+
+    &--selected,
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .repo-element__title {
-  @include link;
-  display: block;
-  font-size: 20px;
+    @include link;
+    display: block;
+    font-size: 20px;
 }
 
 .repo-element__info {
-  margin-top: 12px;
-  font-size: 16px;
-  color: $gray;
+    margin-top: 12px;
+    font-size: 16px;
+    color: $gray;
 }

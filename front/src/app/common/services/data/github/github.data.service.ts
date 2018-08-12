@@ -10,8 +10,9 @@ export class GithubDataService extends BaseDataService {
     return this.get(environment.apiUrls.issues);
   }
 
-  getRepositories(): Promise<Repository> {
-    return this.get(environment.apiUrls.repositories);
+  async getRepositories(params): Promise<Repository[]> {
+    const repositories = await this.get(environment.apiUrls.repositories, params);
+    return repositories.map(item => new Repository(item));
   }
 
   getContests(): Promise<Contest[]> {

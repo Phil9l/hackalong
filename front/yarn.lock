@@ -82,9 +82,11 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/router@^3.3.1":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-3.4.10.tgz#a466a0918fc2882ece18ca12bd5aea298050e91e"
+"@angular/router@^6.0.4":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.1.2.tgz#5e9e12225b41940fe346675caf1ed15033738abc"
+  dependencies:
+    tslib "^1.9.0"
 
 "@angular/tsc-wrapped@0.5.2", "@angular/tsc-wrapped@^0.5.0":
   version "0.5.2"
@@ -5439,6 +5441,10 @@ run-async@^0.1.0:
 rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
+
+rxjs-compat@^6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.2.2.tgz#3c0fcdb46130cc70aa55412c2b1147905ab4680a"
 
 rxjs@^5.0.1:
   version "5.5.11"

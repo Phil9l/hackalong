@@ -5,15 +5,15 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://172.21.145.244:8080',
+  apiBaseUrl: 'http://172.21.145.244:8080/api',
   mockAnyRequestAsGet: false,
   apiUrls: {
     contests: {
       all: '/contests/all.json'
     },
-    issues: '/api/issues',
-    repositories: '/api/repositories',
-    user: '/api/user'
+    issues: '/issues',
+    repositories: '/repositories',
+    user: '/user'
   },
   auth: {
     tokenKey: 'AUTH_TOKEN'

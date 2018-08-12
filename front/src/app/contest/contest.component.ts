@@ -3,11 +3,11 @@ import { GithubAppService } from '../common/services/app/github/github.app.servi
 import { Contests } from '../common/entities/contests';
 
 @Component({
-  selector: 'app-contests',
-  templateUrl: './contests.component.html',
-  styleUrls: ['./contests.component.scss']
+  selector: 'app-contest',
+  templateUrl: './contest.component.html',
+  styleUrls: ['./contest.component.scss']
 })
-export class ContestsComponent {
+export class ContestComponent {
 
   constructor(private githubService: GithubAppService) {
     this.getContests();

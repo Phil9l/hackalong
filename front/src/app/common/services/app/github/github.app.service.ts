@@ -14,8 +14,8 @@ export class GithubAppService {
     return this.dataService.getIssues();
   }
 
-  getRepositories(): Promise<Repository> {
-    return this.dataService.getRepositories();
+  getRepositories(owner, token): Promise<Repository[]> {
+    return this.dataService.getRepositories({ owner, token });
   }
 
   async getContests(): Promise<Contests> {

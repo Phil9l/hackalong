@@ -1,1 +1,1 @@
-<h1>{{title}}</h1><ng-container *ngIf="logged"><div>Hello, {{user?.name}}</div><img [src]="user?.photoURL"><button (click)="signOut()">sign out</button></ng-container><ng-container *ngIf="!logged"><button (click)="signIn()">sign in by github</button></ng-container><div><app-contests></app-contests></div>
+<div class="app"><router-outlet></router-outlet></div>

@@ -1,11 +1,2 @@
-h1 {{title}}
-
-ng-container(*ngIf='logged')
-  div Hello, {{user?.name}}
-  img([src]='user?.photoURL')
-  button((click)='signOut()') sign out
-ng-container(*ngIf='!logged')
-  button((click)='signIn()') sign in by github
-
-div
-  app-contests
+.app
+  router-outlet

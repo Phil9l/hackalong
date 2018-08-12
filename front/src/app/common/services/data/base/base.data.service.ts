@@ -30,12 +30,12 @@ export class BaseDataService {
   private request(url: string, method: string, params: any = {}, data?: any, options = {} as RequestOptions): Promise<any> {
     // Replace parameter placeholders and remove empty query parameters
     url = `${environment.apiBaseUrl}${url}`;
-    url = url.replace(/:([a-zA-Z]+)/g, (match, paramKey) => params[paramKey] != null ? params[paramKey] : '')
-      .replace(/[a-zA-Z]*?=&/g, '')
-      .replace(/&[a-zA-Z]*?=$/g, '')
-      .replace(/\?[a-zA-Z]*?=$/g, '');
+    url += '?';
+    url += Object.keys(params).map(key => key + '=' + params[key]).join('&');
     // Anti-cache
     url += (!url.includes('?') ? '?' : '&') + `_=${DateUtils.now()}`;
+
+    console.log('do request with url:', url);
 
     let body: any;
     let headers = {};
@@ -48,7 +48,8 @@ export class BaseDataService {
         body = JSON.stringify(data);
         headers = {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         };
       }
     }
@@ -72,7 +73,7 @@ export class BaseDataService {
       body = undefined;
     }
 
-    return fetch(url, { method, headers, body })
+    return fetch(url, { method, headers, body, mode: 'no-cors' })
       .then(response => {
         if (response.ok) {
           return response.json();

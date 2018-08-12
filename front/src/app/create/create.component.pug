@@ -1,0 +1,43 @@
+.app__logo([routerLink]="['/home']") ᕦ( ͡° ͜ʖ ͡°)ᕤ
+
+.create-header Create new contest
+.create-field
+  .create-field__title Choose a repository
+  .create-field__content
+    .repo-element(*ngFor='let item of repositories', (click)='selectRepository(item)', [class.repo-element--selected]='item.selected')
+      a.repo-element__title {{item.title}}
+      .repo-element__info Updated 2 hours ago
+
+.issue-list
+  .issue-list__header Choose issues which will count towards this contest
+  .issue-list__subheader
+    | Selected Pixelogicdev/FocusBlock as a contest repo.
+    span Select a different one
+  .issue-element.issue-element--editable
+    .issue-element__points
+      span –
+      |           2
+      span +
+    .issue-element__right
+      a.issue-element__title(href='https://github.com/Phil9l/hackalong/issues/1') Fix a bug
+      .issue-element__info Opened on Aug 11
+  .issue-element.issue-element--editable.issue-element--zero-points
+    .issue-element__points
+      span –
+      |           0
+      span +
+    .issue-element__right
+      a.issue-element__title(href='https://github.com/Phil9l/hackalong/issues/1') Fix a bug
+      .issue-element__info Opened on Aug 11
+.create-field
+  .create-field__title Set deadline for this event
+  .create-field__info You will not be able to edit this later
+  .create-field__content
+    input.input(type='date', value='10 Nov 2018')
+.create-field
+  .create-field__title Add description
+  .create-field__info Markdown is supported
+  .create-field__content
+    textarea.input.textarea(placeholder='Tell people about rules, prizes, etc.')
+.create-button
+  button.button Create contest
