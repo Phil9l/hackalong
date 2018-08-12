@@ -7,7 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContestsComponent } from './contests/contests.component';
 
 import { GithubDataService } from './common/services/data/github/github.data.service';
-import { GithubAppService } from './common/services/app/github.app.service';
+import { GithubAppService } from './common/services/app/github/github.app.service';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { UserAppService } from './common/services/app/user/user.app.service';
 
 @NgModule({
   declarations: [
@@ -17,11 +22,15 @@ import { GithubAppService } from './common/services/app/github.app.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     GithubAppService,
-    GithubDataService
+    GithubDataService,
+    UserAppService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,11 +5,25 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: '/assets/mocks',
+  apiBaseUrl: 'http://172.21.145.244:8080',
   mockAnyRequestAsGet: false,
   apiUrls: {
     contests: {
       all: '/contests/all.json'
-    }
+    },
+    issues: '/api/issues',
+    repositories: '/api/repositories',
+    user: '/api/user'
+  },
+  auth: {
+    tokenKey: 'AUTH_TOKEN'
+  },
+  firebase: {
+    apiKey: 'AIzaSyAjPYQBCOs6F8MtW-A3coEMkyT3leKhTkY',
+    authDomain: 'hackalong-2018-2f913.firebaseapp.com',
+    databaseURL: 'https://hackalong-2018-2f913.firebaseio.com',
+    projectId: 'hackalong-2018-2f913',
+    storageBucket: 'hackalong-2018-2f913.appspot.com',
+    messagingSenderId: '1059177428180'
   }
 };
