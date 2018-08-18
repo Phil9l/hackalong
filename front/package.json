@@ -27,7 +27,11 @@
         "firebase": "5.3.1",
         "rxjs": "6.2.0",
         "rxjs-compat": "6.2.2",
-        "zone.js": "0.8.26"
+        "zone.js": "0.8.26",
+        "@ngrx/effects": "^6.1.0",
+        "@ngrx/router-store": "^6.1.0",
+        "@ngrx/store": "^6.1.0",
+        "@ngrx/store-devtools": "^6.1.0"
     },
     "devDependencies": {
         "@angular/cli": "6.0.8",
