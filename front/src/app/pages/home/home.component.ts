@@ -1,35 +1,36 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { firestore } from 'firebase';
 import { Contest } from '../../common/entities/contest';
+import { CommonUtils } from '../../common/utils/common/common.utils';
 
 @Component({
     selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    templateUrl: './home.component.html'
 })
 export class HomeComponent {
-    finished: Contest[];
-    active: Contest[];
+    finished = [] as Contest[];
+    active = [] as Contest[];
 
-    date = new Date();
+    commonUtils = CommonUtils;
 
-    constructor() {
-        this.date.setMinutes(18);
-
+    constructor(private cd: ChangeDetectorRef) {
         firestore().collection('contests').get().then(snapshot => {
             snapshot.forEach((doc) => {
-                console.log(doc.id, '=>', doc.data());
-                switch (doc.data().finished) {
+                const contest = new Contest(doc.data());
+                switch (contest.isFinished) {
                     case true:
-                        this.finished.push(new Contest(doc.data()));
+                        this.finished.push(contest);
                         break;
                     case false:
-                        this.active.push(new Contest(doc.data()));
+                        this.active.push(contest);
                         break;
                     default:
                         break;
                 }
             });
+            this.cd.detectChanges();
+            console.log('active;', this.active);
+            console.log('finished:', this.finished);
         })
     }
 }

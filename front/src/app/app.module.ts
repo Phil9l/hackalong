@@ -20,6 +20,7 @@ import { AppRoutes } from './app.routes';
 import { HomeHeaderComponent } from './pages/home/header/home-header.component';
 import { ContestListComponent } from './components/contest-list/contest-list.component';
 import { TimeLeftPipe } from './common/pipes/time-left.pipe';
+import { DefaultImagePipe } from './common/pipes/default-image.pipe';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { TimeLeftPipe } from './common/pipes/time-left.pipe';
         CreateComponent,
         HomeHeaderComponent,
 
+        DefaultImagePipe,
         TimeLeftPipe
     ],
     imports: [

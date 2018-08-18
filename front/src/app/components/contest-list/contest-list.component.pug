@@ -5,7 +5,11 @@ include ../../../base
 
     +b.contest-element(*ngFor='let contest of contests')
         +e.image
-            img([src]='contest.imageURL')
+            img([src]='contest.imageURL | defaultImage')
         +e.right
             +e.name {{contest.title}}
-            +e.info {{contest.deadline}}
+            +e.info
+                ng-container(*ngIf='contest.started')
+                    | {{contest.end | timeLeft}}
+                ng-container(*ngIf='!contest.started')
+                    | {{contest.start | timeLeft}}

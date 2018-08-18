@@ -1,1 +1,4 @@
 app-home-header
+
+app-contest-list(*ngIf='commonUtils.hasItems(active)', [title]='"Open contests"', [contests]='active')
+app-contest-list(*ngIf='commonUtils.hasItems(finished)', [title]='"Recently finished"', [contests]='finished')

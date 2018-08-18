@@ -13,7 +13,11 @@ export const environment = {
         },
         issues: '/issues',
         repositories: '/repositories',
-        user: '/user'
+        user: '/user',
+        images: {
+            base: '/assets/images',
+            empty: 'image-contest-default.png'
+        }
     },
     auth: {
         tokenKey: 'AUTH_TOKEN'

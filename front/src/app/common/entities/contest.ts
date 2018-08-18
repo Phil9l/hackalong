@@ -22,4 +22,8 @@ export class Contest {
         const users = Object.keys(data.users);
         this.participants = users.map(user => new Participant({ nickname: user, points: users[user] }));
     }
+
+    get started(): boolean {
+        return this.start < new Date();
+    }
 }
