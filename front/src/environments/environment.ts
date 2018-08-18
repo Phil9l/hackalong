@@ -4,26 +4,26 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-  production: false,
-  apiBaseUrl: 'http://gitbattle.win:8080/api',
-  mockAnyRequestAsGet: false,
-  apiUrls: {
-    contests: {
-      all: '/contests/all.json'
+    production: false,
+    apiBaseUrl: 'http://gitbattle.win/api',
+    mockAnyRequestAsGet: false,
+    apiUrls: {
+        contests: {
+            all: '/contests/all.json'
+        },
+        issues: '/issues',
+        repositories: '/repositories',
+        user: '/user'
     },
-    issues: '/issues',
-    repositories: '/repositories',
-    user: '/user'
-  },
-  auth: {
-    tokenKey: 'AUTH_TOKEN'
-  },
-  firebase: {
-    apiKey: 'AIzaSyAjPYQBCOs6F8MtW-A3coEMkyT3leKhTkY',
-    authDomain: 'hackalong-2018-2f913.firebaseapp.com',
-    databaseURL: 'https://hackalong-2018-2f913.firebaseio.com',
-    projectId: 'hackalong-2018-2f913',
-    storageBucket: 'hackalong-2018-2f913.appspot.com',
-    messagingSenderId: '1059177428180'
-  }
+    auth: {
+        tokenKey: 'AUTH_TOKEN'
+    },
+    firebase: {
+        apiKey: 'AIzaSyAjPYQBCOs6F8MtW-A3coEMkyT3leKhTkY',
+        authDomain: 'hackalong-2018-2f913.firebaseapp.com',
+        databaseURL: 'https://hackalong-2018-2f913.firebaseio.com',
+        projectId: 'hackalong-2018-2f913',
+        storageBucket: 'hackalong-2018-2f913.appspot.com',
+        messagingSenderId: '1059177428180'
+    }
 };

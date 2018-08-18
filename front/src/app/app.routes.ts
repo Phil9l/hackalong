@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { ContestComponent } from './contest/contest.component';
-import { HomeComponent } from './home/home.component';
-import { CreateComponent } from './create/create.component';
+import { ContestComponent } from './pages/contest/contest.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CreateComponent } from './pages/create/create.component';
 
 export const AppRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

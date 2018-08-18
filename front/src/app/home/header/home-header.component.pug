@@ -1,9 +1,0 @@
-.front-page
-  .front-page__header GitBattle
-    i(style='font-style: italic !important') !
-  .front-page__subheader Close GitHub issues and win prizes
-  br
-  .front-page__welcome(*ngIf='logged') Hello, {{user.name}}!
-  .front-page__actions
-    button.button((click)='createContest()') Create new contest
-    button.button.button--secondary((click)='signIn()', *ngIf='!logged') Login with GitHub

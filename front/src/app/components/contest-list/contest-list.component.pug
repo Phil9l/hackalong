@@ -1,0 +1,11 @@
+include ../../../base
+
++b.contest-list
+    +e.header {{title}}
+
+    +b.contest-element(*ngFor='let contest of contests')
+        +e.image
+            img([src]='contest.imageURL')
+        +e.right
+            +e.name {{contest.title}}
+            +e.info {{contest.deadline}}
