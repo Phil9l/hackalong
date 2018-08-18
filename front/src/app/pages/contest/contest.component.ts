@@ -5,8 +5,7 @@ import { Contest } from '../../common/entities/contest';
 
 @Component({
     selector: 'app-contest',
-    templateUrl: './contest.component.html',
-    styleUrls: ['./contest.component.scss']
+    templateUrl: './contest.component.html'
 })
 export class ContestComponent {
     @Input() contest: Contest;
