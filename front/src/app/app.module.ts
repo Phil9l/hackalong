@@ -29,6 +29,7 @@ import { ContestsSelectors } from './store/contests/contests.selectors';
 import { ContestsEffects } from './store/contests/contests.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { LetDirective } from './common/directives/let.directive';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { LetDirective } from './common/directives/let.directive';
         HomeHeaderComponent,
 
         LetDirective,
+        LogoComponent,
 
         DefaultImagePipe,
         TimeLeftPipe

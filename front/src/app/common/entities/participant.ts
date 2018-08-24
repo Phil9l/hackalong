@@ -1,11 +1,11 @@
 import { User } from './user';
 
 export class Participant extends User {
-  points: number;
+    points: number;
 
-  constructor(data: any = {}) {
-    super(data);
+    constructor(data: any = {}) {
+        super(data);
 
-    this.points = data.points || 0;
-  }
+        this.points = data.points || 0;
+    }
 }
