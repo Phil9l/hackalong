@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { GithubAppService } from '../../common/services/app/github/github.app.service';
-import { Contests } from '../../common/entities/contests';
 import { Contest } from '../../common/entities/contest';
+import { ActivatedRoute } from '@angular/router';
+import { ContestsSelectors } from '../../store/contests/contests.selectors';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-contest',
@@ -10,11 +12,12 @@ import { Contest } from '../../common/entities/contest';
 export class ContestComponent {
     @Input() contest: Contest;
 
-    constructor(private githubService: GithubAppService) {
-        this.getContests();
-    }
+    contest$: Observable<Contest>;
 
-    async getContests(): Promise<Contests> {
-        return await this.githubService.getContests();
+    constructor(private githubService: GithubAppService,
+                private route: ActivatedRoute,
+                private contestsSelectors: ContestsSelectors) {
+        const id = this.route.snapshot.paramMap.get('id');
+        this.contest$ = this.contestsSelectors.getContest(id);
     }
 }

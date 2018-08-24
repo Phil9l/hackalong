@@ -28,6 +28,7 @@ import { reducers } from './store/app.reducers';
 import { ContestsSelectors } from './store/contests/contests.selectors';
 import { ContestsEffects } from './store/contests/contests.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { LetDirective } from './common/directives/let.directive';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,8 @@ import { EffectsModule } from '@ngrx/effects';
         HomeComponent,
         CreateComponent,
         HomeHeaderComponent,
+
+        LetDirective,
 
         DefaultImagePipe,
         TimeLeftPipe

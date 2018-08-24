@@ -13,6 +13,14 @@ export class ContestsSelectors extends BaseSelectors {
         super(store);
     }
 
+    // TODO: Array => Map data structure
+    getContest(id: string): Observable<Contest> {
+        return this.select(createSelector(
+            this.featureStateSelector,
+            (state: any) => state.entities.find(entity => entity.id === id)
+        ));
+    }
+
     getFinishedContests(): Observable<Contest[]> {
         return this.select(createSelector(
             this.featureStateSelector,

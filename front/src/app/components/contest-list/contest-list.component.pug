@@ -3,7 +3,7 @@ include ../../../base
 +b.contest-list
     +e.header {{title}}
 
-    +b.contest-element(*ngFor='let contest of contests')
+    +b.contest-element(*ngFor='let contest of contests', routerLink='/contest/{{contest.id}}')
         +e.image
             img([src]='contest.imageURL | defaultImage')
         +e.right

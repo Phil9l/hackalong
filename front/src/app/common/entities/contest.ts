@@ -1,6 +1,8 @@
 import { Participant } from './participant';
+import { StringUtils } from '../utils/string/string.utils';
 
 export class Contest {
+    id: string;
     title: string;
     start: Date;
     end: Date;
@@ -21,6 +23,7 @@ export class Contest {
 
         const users = Object.keys(data.users);
         this.participants = users.map(user => new Participant({ nickname: user, points: users[user] }));
+        this.id = StringUtils.toKebabCase(data.title);
     }
 
     get started(): boolean {
