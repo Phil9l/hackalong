@@ -13,8 +13,10 @@ export class Contest {
     isFinished: boolean;
     link: string;
     owner: string;
+    urlName: string;
 
     constructor(data: any = {}) {
+        this.id = data.id || '';
         this.title = data.title || '';
         this.start = new Date(data.start);
         this.end = new Date(data.end);
@@ -26,9 +28,8 @@ export class Contest {
         this.isFinished = data.isFinished || data.is_finished;
 
         const users = Object.keys(data.users);
-        console.log('users:', users);
         this.participants = users.map(user => new Participant({ nickname: user, points: data.users[user] }));
-        this.id = StringUtils.toKebabCase(data.title);
+        this.urlName = StringUtils.toKebabCase(data.title);
     }
 
     get started(): boolean {

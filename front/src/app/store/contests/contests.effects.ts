@@ -19,8 +19,11 @@ export class ContestsEffects {
         mergeMap(() =>
             firestore().collection(CollectionType.CONTESTS).get().then(snapshot => {
                 const contests = [];
-                snapshot.forEach(contest => contests.push(new Contest(contest.data())));
-                return { type: ContestActons.ADD_CONTESTS, payload: new Map(contests.map(item => [item.id, item] as [string, Contest])) };
+                snapshot.forEach(contest => contests.push(new Contest({ ...contest.data(), id: contest.id })));
+                return {
+                    type: ContestActons.ADD_CONTESTS,
+                    payload: new Map(contests.map(item => [item.id, item] as [string, Contest]))
+                };
             })
         ));
 }
