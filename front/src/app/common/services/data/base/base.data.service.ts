@@ -1,7 +1,7 @@
 import { environment } from '../../../../../environments/environment';
 import { RequestMethodType } from '../../../enums/request-method.enum';
 import { RequestOptions } from '../../../types/request-options';
-import { StorageKeyType } from '../../../enums/storage-key-type';
+import { StorageKeyTypeEnum } from '../../../enums/storage-key-type.enum';
 
 export class BaseDataService {
 
@@ -55,7 +55,7 @@ export class BaseDataService {
       headers = {
         ...headers,
         // TODO: Think to get this from service or make special class `TokenStorage`
-        'token': localStorage.getItem(StorageKeyType.TOKEN)
+        'token': localStorage.getItem(StorageKeyTypeEnum.TOKEN)
       };
     }
 

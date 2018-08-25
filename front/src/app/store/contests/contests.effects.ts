@@ -5,6 +5,7 @@ import { Contest } from '../../common/entities/contest';
 import * as ContestActons from './contests.actions';
 import { mergeMap } from 'rxjs/operators';
 import { firestore } from 'firebase';
+import { CollectionType } from '../../common/enums/collection-type.enum';
 
 @Injectable()
 export class ContestsEffects {
@@ -16,10 +17,10 @@ export class ContestsEffects {
     contestsFetch = this.actions$.pipe(
         ofType(ContestActons.FETCH_CONTESTS),
         mergeMap(() =>
-            firestore().collection('contests').get().then(snapshot => {
+            firestore().collection(CollectionType.CONTESTS).get().then(snapshot => {
                 const contests = [];
                 snapshot.forEach(contest => contests.push(new Contest(contest.data())));
-                return { type: ContestActons.ADD_CONTESTS, payload: contests };
+                return { type: ContestActons.ADD_CONTESTS, payload: new Map(contests.map(item => [item.id, item] as [string, Contest])) };
             })
         ));
 }

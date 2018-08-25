@@ -7,11 +7,11 @@ export interface FeatureState extends fromApp.AppState {
 }
 
 export interface State {
-    entities: Contest[];
+    entities: Map<string, Contest>;
 }
 
 const initialState: State = {
-    entities: []
+    entities: new Map<string, Contest>()
 };
 
 export function contestsReducer(state = initialState, action: ContestsListActions.ContestsListActions) {
@@ -19,7 +19,7 @@ export function contestsReducer(state = initialState, action: ContestsListAction
         case ContestsListActions.ADD_CONTESTS:
             return {
                 ...state,
-                entities: action.payload
+                entities: new Map([...Array.from(state.entities.entries()), ...Array.from(action.payload.entries())])
             };
         default:
             return state;
