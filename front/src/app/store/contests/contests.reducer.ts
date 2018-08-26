@@ -1,10 +1,5 @@
 import { Contest } from '../../common/entities/contest';
 import * as ContestsListActions from './contests.actions';
-import * as fromApp from '../app.reducers';
-
-export interface FeatureState extends fromApp.AppState {
-    entities: State
-}
 
 export interface State {
     entities: Map<string, Contest>;
@@ -19,7 +14,7 @@ export function contestsReducer(state = initialState, action: ContestsListAction
         case ContestsListActions.ADD_CONTESTS:
             return {
                 ...state,
-                entities: new Map([...Array.from(state.entities.entries()), ...Array.from(action.payload.entries())])
+                entities: new Map(action.payload)
             };
         default:
             return state;

@@ -26,10 +26,9 @@ import { TimeLeftPipe } from './common/pipes/time-left.pipe';
 import { DefaultImagePipe } from './common/pipes/default-image.pipe';
 import { reducers } from './store/app.reducers';
 import { ContestsSelectors } from './store/contests/contests.selectors';
-import { ContestsEffects } from './store/contests/contests.effects';
-import { EffectsModule } from '@ngrx/effects';
 import { LetDirective } from './common/directives/let.directive';
 import { LogoComponent } from './components/logo/logo.component';
+import { ContestsAppService } from './common/services/app/contests/contests.app.service';
 
 @NgModule({
     declarations: [
@@ -54,13 +53,13 @@ import { LogoComponent } from './components/logo/logo.component';
         AngularFirestoreModule,
         AngularFireAuthModule,
         RouterModule.forRoot(AppRoutes, { enableTracing: true }),
-        EffectsModule.forRoot([ContestsEffects]),
         StoreModule.forRoot(reducers),
         !environment.production ? StoreDevtoolsModule.instrument() : []
     ],
     providers: [
         GithubAppService,
         GithubDataService,
+        ContestsAppService,
         UserAppService,
 
         ContestsSelectors
