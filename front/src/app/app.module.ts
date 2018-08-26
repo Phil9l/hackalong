@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
@@ -29,6 +28,9 @@ import { ContestsSelectors } from './store/contests/contests.selectors';
 import { LetDirective } from './common/directives/let.directive';
 import { LogoComponent } from './components/logo/logo.component';
 import { ContestsAppService } from './common/services/app/contests/contests.app.service';
+import { CalendarModule } from 'primeng/primeng';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -47,6 +49,7 @@ import { ContestsAppService } from './common/services/app/contests/contests.app.
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
         AngularFireModule.initializeApp(environment.firebase),
@@ -54,6 +57,7 @@ import { ContestsAppService } from './common/services/app/contests/contests.app.
         AngularFireAuthModule,
         RouterModule.forRoot(AppRoutes, { enableTracing: true }),
         StoreModule.forRoot(reducers),
+        CalendarModule,
         !environment.production ? StoreDevtoolsModule.instrument() : []
     ],
     providers: [

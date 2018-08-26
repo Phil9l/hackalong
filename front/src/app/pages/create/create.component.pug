@@ -1,38 +1,39 @@
+include ../../../base
+
 app-logo
 
-.create-header Create new contest
-.create-field
-    .create-field__title Choose a repository
-    .create-field__content
-        .repo-element(*ngFor='let item of repositories', (click)='selectRepository(item)', [class.repo-element--selected]='item.selected')
-            a.repo-element__title {{item.title}}
-            .repo-element__info Updated 2 hours ago
++b.create-header Create new contest
++b.create-field(id='select')
+    +e.title Choose a repository
+    +e.content
+        +b.repo-element(*ngFor='let repository of repositories', (click)='selectRepository(repository)', [class.repo-element--selected]='repository.selected')
+            +e.A.title {{repository.name}}
 
-.issue-list
-    .issue-list__header Choose issues which will count towards this contest
-    .issue-list__subheader
-        | Selected Pixelogicdev/FocusBlock as a contest repo.
-        span Select a different one
++b.issue-list(*ngIf='selectedRepository')
+    +e.header Choose issues which will count towards this contest
+    +e.subheader Selected {{selectedRepository.name}} as a contest repo.
 
-    .issue-element.issue-element--editable(*ngFor='let item of issues')
-        .issue-element__points
-            span –
-            | {{item.points}}
-            span +
-        .issue-element__right
-            a.issue-element__title(href='{{item.link}}') {{item.title}}
-            .issue-element__info {{item.date}}
 
-.create-field
-    .create-field__title Set deadline for this event
-    .create-field__info You will not be able to edit this later
-    .create-field__content
-        input.input(type='date', [(ngModel)]='deadline')
-.create-field
-    .create-field__title Add description
-    .create-field__info Markdown is supported
-    .create-field__content
-        textarea.input.textarea(placeholder='Tell people about rules, prizes, etc.', [(ngModel)]='description')
-.create-button
-    div(*ngIf='!isComplete') Please, fill all forms
-    button.button((click)='createContest()', *ngIf='isComplete') Create contest
+    +b.issue-element.issue-element--editable(*ngFor='let issue of issues')
+        +e.points
+            span((click)='issue.decreasePoints()') –
+            | {{issue.points}}
+            span((click)='issue.increasePoints()') +
+        +e.right
+            +e.A.title(href='{{issue.link}}') {{issue.title}}
+            +e.info {{issue.date}}
+
++b.create-field(*ngIf='selectedRepository')
+    +e.title Set deadline for this event
+    +e.info You will not be able to edit this later
+    +e.content
+        p-calendar([(ngModel)]="end", showTime="true", hourFormat="24")
+
++b.create-field(*ngIf='end')
+    +e.title Add description
+    +e.info Markdown is not supported yet
+    +e.content
+        +b.TEXTAREA.input.textarea(placeholder='Tell people about rules, prizes, etc.', [(ngModel)]='description')
+
++b.create-button(*ngIf='description && description.length')
+    +b.BUTTON.button((click)='createContest()') Create contest

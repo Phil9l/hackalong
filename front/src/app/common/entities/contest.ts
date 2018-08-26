@@ -7,7 +7,6 @@ export class Contest {
     start: Date;
     end: Date;
     participants: Participant[];
-    deadline: number;
     imageURL: string;
     description: string;
     isFinished: boolean;
@@ -22,7 +21,6 @@ export class Contest {
         this.end = new Date(data.end);
         this.link = data.link || '';
         this.owner = data.owner || '';
-        this.deadline = data.deadline || 0;
         this.imageURL = data.imageURL || '';
         this.description = data.description || '';
         this.isFinished = data.isFinished || data.is_finished;

@@ -38,6 +38,12 @@
     "@angular-devkit/core" "0.6.8"
     rxjs "^6.0.0"
 
+"@angular/animations@>=4.2.4", "@angular/animations@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-6.1.4.tgz#ca17acd62b9328404671a569fbf3065472527174"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/cli@6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.0.8.tgz#65070958b944be30053232c51f8449b7ddd4d92a"
@@ -58,6 +64,12 @@
 "@angular/common@6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.0.8.tgz#1ca61a07e17d21c7d0499721a5081f2c7ee3c2b8"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/common@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-6.1.4.tgz#825de5b1fb98db5a1d3d2253ad7181bb25477551"
   dependencies:
     tslib "^1.9.0"
 
@@ -84,6 +96,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/compiler@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-6.1.4.tgz#479e792ce012dc8481f1d87b919fcddb11c8eee0"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/compiler@^2.3.1":
   version "2.4.10"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.10.tgz#f51fd34820b2a02c7cb61fbcf49873c58056fb0c"
@@ -91,6 +109,12 @@
 "@angular/core@6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.0.8.tgz#32171849623c7e12abc2b8738b93134806c5d3de"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/core@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.1.4.tgz#2602ecc031bbb4ad968a7db78786017e92d19b98"
   dependencies:
     tslib "^1.9.0"
 
@@ -104,9 +128,21 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/forms@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.1.4.tgz#d0b83f9cd4cb35f58ee67766d17aae0cbd7de561"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/http@6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-6.0.8.tgz#dfde33c31ccc9ac2420aee2540183b06b38f573f"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/http@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-6.1.4.tgz#0ab24a51075daaba60a4241200c44dcfcd87da5e"
   dependencies:
     tslib "^1.9.0"
 
@@ -116,15 +152,33 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/platform-browser-dynamic@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.1.4.tgz#1af3549decadfb8e73513d917eaa5479184c39ea"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/platform-browser@6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-6.0.8.tgz#b6cc66d676ccdc0bb999abf97dc907c9073bd804"
   dependencies:
     tslib "^1.9.0"
 
+"@angular/platform-browser@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-6.1.4.tgz#a5763f549f2073ba30b9d8baf8512c8076e8d58b"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/router@6.0.4":
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.0.4.tgz#81c96dfa42a8c4a218cbd450b1e8959a76ea9595"
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/router@>=2.4.5":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-6.1.4.tgz#ec6d7400baea46386e3bbcf3e3acb0135f368fac"
   dependencies:
     tslib "^1.9.0"
 
@@ -435,6 +489,24 @@ align-text@^0.1.1, align-text@^0.1.3:
 alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
+
+amazing-time-picker@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/amazing-time-picker/-/amazing-time-picker-1.5.3.tgz#b1450f72441330650009cb2898fbebb0bc3fd54d"
+  dependencies:
+    "@angular/animations" ">=4.2.4"
+    "@angular/common" ">=2.4.5"
+    "@angular/compiler" ">=2.4.5"
+    "@angular/core" ">=2.4.5"
+    "@angular/forms" ">=2.4.5"
+    "@angular/http" ">=2.4.5"
+    "@angular/platform-browser" ">=2.4.5"
+    "@angular/platform-browser-dynamic" ">=2.4.5"
+    "@angular/router" ">=2.4.5"
+    core-js "^2.4.1"
+    intl "^1.2.5"
+    rxjs "^5.4.2"
+    zone.js "^0.8.14"
 
 amdefine@1.0.0:
   version "1.0.0"
@@ -1511,7 +1583,7 @@ core-js@2.5.5:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.5.tgz#b14dde936c640c0579a6b50cabcc132dd6127e3b"
 
-core-js@2.5.7, core-js@^2.2.0, core-js@^2.4.0:
+core-js@2.5.7, core-js@^2.2.0, core-js@^2.4.0, core-js@^2.4.1:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
@@ -3052,6 +3124,10 @@ inquirer@^0.12.0:
 interpret@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
+
+intl@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/intl/-/intl-1.2.5.tgz#82244a2190c4e419f8371f5aa34daa3420e2abde"
 
 invert-kv@^1.0.0:
   version "1.0.0"
@@ -4941,6 +5017,14 @@ pretty-error@^2.0.2:
     renderkid "^2.0.1"
     utila "~0.4"
 
+primeicons@^1.0.0-beta.10:
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-1.0.0-beta.10.tgz#b1a27a8a279c0b28d4bd537a29709b39cfebbd9f"
+
+primeng@^6.0.0:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-6.1.2.tgz#b13e6f27ab36482dc4f3657d20aa29f48428a9cb"
+
 process-nextick-args@~1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
@@ -5600,7 +5684,7 @@ rxjs@6.2.0:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^5.0.1:
+rxjs@^5.0.1, rxjs@^5.4.2:
   version "5.5.11"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.11.tgz#f733027ca43e3bec6b994473be4ab98ad43ced87"
   dependencies:
@@ -7090,7 +7174,7 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zone.js@0.8.26:
+zone.js@0.8.26, zone.js@^0.8.14:
   version "0.8.26"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.26.tgz#7bdd72f7668c5a7ad6b118148b4ea39c59d08d2d"
 

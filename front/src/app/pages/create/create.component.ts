@@ -15,17 +15,17 @@ export class CreateComponent {
     repositories: Repository[];
     selectedRepository: Repository;
     issues = [] as Issue[];
-    deadline: Date;
+    end: Date;
     description: string;
 
     constructor(private githubService: GithubAppService,
                 private userService: UserAppService) {
         this.getRepositories();
-        this.getIssues();
     }
 
     async getRepositories(): Promise<void> {
         await this.login();
+        // TODO: Add location for user entity in store
         const owner = this.userService.user.nickname;
         const token = this.userService.loadToken();
         this.repositories = await this.githubService.getRepositories(owner, token);
@@ -53,25 +53,18 @@ export class CreateComponent {
                 this.selectedRepository = item;
             }
         });
+        this.getIssues();
     }
 
     createContest(): void {
-        if (!this.isComplete()) {
-            alert('Please, fill all forms');
-            return;
-        }
         const contestRef = database().ref('contests');
         const data = {
             username: this.userService.user.nickname,
-            deadline: this.deadline,
+            end: this.end,
             repository: this.selectedRepository.name,
             description: this.description,
             issues: this.issues
         };
         contestRef.set(data);
-    }
-
-    isComplete(): boolean {
-        return Boolean(this.deadline) && Boolean(this.selectedRepository) && Boolean(this.description.length);
     }
 }

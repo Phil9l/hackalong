@@ -17,7 +17,7 @@ export class Issue {
         this.points++;
     }
 
-    decreasePoint(): void {
+    decreasePoints(): void {
         if (this.points > 0) {
             this.points--;
         }
