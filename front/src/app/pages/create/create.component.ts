@@ -86,14 +86,33 @@ export class CreateComponent {
 
         try {
             this.busy.create = true;
-            const result = await this.contestService.registerContest({
+
+            // Register contest
+            const registerResult = await this.contestService.registerContest({
                 owner: data.owner,
                 repository: data.repository,
                 token: this.userService.loadToken()
             });
 
-            console.log('contest has been created:', result);
+            console.log('contest has been created:', registerResult);
 
+            // Add issues
+            // TODO: Move to backend
+            const issuePromises = this.issues.reduce((issues: any, issue: Issue) => {
+                if (!issue.hasZeroPoints) {
+                    return this.contestService.selectIssue({
+                        token: this.userService.loadToken(),
+                        repository: data.repository,
+                        score: issue.points,
+                        issue: issue.id
+                    });
+                }
+            }, []);
+            const selectResult = await Promise.all(issuePromises);
+
+            console.log('issues selected:', selectResult);
+
+            // Add contest to firebase store
             const contestRef = firestore().collection(CollectionType.CONTESTS);
             await contestRef.add(data);
 

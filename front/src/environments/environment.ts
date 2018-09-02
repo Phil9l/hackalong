@@ -10,6 +10,7 @@ export const environment = {
     apiUrls: {
         contests: {
             create: '/register',
+            selectIssue: '/issues/select'
         },
         issues: '/issues',
         repositories: '/repositories',

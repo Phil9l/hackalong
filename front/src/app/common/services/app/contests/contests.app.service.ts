@@ -30,4 +30,8 @@ export class ContestsAppService {
     registerContest(params): Promise<void> {
         return this.contestsService.registerContest(params);
     }
+
+    selectIssue(params): Promise<void> {
+        return this.contestsService.selectIssue(params);
+    }
 }
