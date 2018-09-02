@@ -101,6 +101,7 @@ export class CreateComponent {
             const issuePromises = this.issues.reduce((issues: any, issue: Issue) => {
                 if (!issue.hasZeroPoints) {
                     return this.contestService.selectIssue({
+                        owner: this.userService.user.nickname,
                         token: this.userService.loadToken(),
                         repository: data.repository,
                         score: issue.points,

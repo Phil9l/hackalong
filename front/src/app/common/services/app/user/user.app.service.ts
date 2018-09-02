@@ -34,6 +34,7 @@ export class UserAppService {
     signIn(): Promise<any> {
         return new Promise<any>((resolve, reject) => {
             const provider = new firebase.auth.GithubAuthProvider();
+            provider.addScope('repo');
             this.fireAuth.auth
                 .signInWithPopup(provider)
                 .then(res => {

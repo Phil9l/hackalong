@@ -16,17 +16,21 @@ app-logo
 +b.issue-list(*ngIf='selectedRepository')
     +e.header Choose issues which will count towards this contest
     +e.subheader Selected {{selectedRepository.name}} as a contest repo. Issues choose automatically if score greater than 0
+
+    ng-container(*ngIf='!busy.issues && issues && !issues?.length') There are no issues in this repository
+
     +e.busy-indicator(*ngIf='busy.issues')
         +busy-indicator
 
-    +b.issue-element.issue-element--editable(*ngFor='let issue of issues', [class.issue-element--zero-points]='issue.hasZeroPoints')
-        +e.points
-            span((click)='issue.decreasePoints()') –
-            | {{issue.points}}
-            span((click)='issue.increasePoints()') +
-        +e.right
-            +e.A.title(href='{{issue.link}}') {{issue.title}}
-            +e.info(*ngIf='issue.date') {{issue.date}}
+    ng-container(*ngIf='!busy.issues')
+        +b.issue-element.issue-element--editable(*ngFor='let issue of issues', [class.issue-element--zero-points]='issue.hasZeroPoints')
+            +e.points
+                span((click)='issue.decreasePoints()') –
+                | {{issue.points}}
+                span((click)='issue.increasePoints()') +
+            +e.right
+                +e.A.title(href='{{issue.link}}') {{issue.title}}
+                +e.info(*ngIf='issue.date') {{issue.date}}
 
 +b.create-field(*ngIf='selectedRepository')
     +e.title Set deadline for this event
