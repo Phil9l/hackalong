@@ -31,6 +31,7 @@ import { ContestsAppService } from './common/services/app/contests/contests.app.
 import { CalendarModule } from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ContestsDataService } from './common/services/data/contests/contests.data.service';
 
 @NgModule({
     declarations: [
@@ -65,6 +66,8 @@ import { FormsModule } from '@angular/forms';
         GithubDataService,
         ContestsAppService,
         UserAppService,
+
+        ContestsDataService,
 
         ContestsSelectors
     ],

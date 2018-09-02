@@ -20,7 +20,7 @@ const LANGUAGE_CONSTANTS = {
     pure: false
 })
 export class TimeLeftPipe extends AsyncPipe {
-    private static TIME_UPDATE_PERIOD = 1000;
+    private static TIME_UPDATE_PERIOD = 100;
 
     value: Date;
     timer: Observable<any>;

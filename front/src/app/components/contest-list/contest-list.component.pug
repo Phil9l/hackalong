@@ -10,6 +10,6 @@ include ../../../base
             +e.name {{contest.title}}
             +e.info
                 ng-container(*ngIf='contest.started')
-                    | {{contest.end | timeLeft}}
+                    | {{contest.end | timeLeft}} to end
                 ng-container(*ngIf='!contest.started')
-                    | {{contest.start | timeLeft}}
+                    | {{contest.start | timeLeft}} to start

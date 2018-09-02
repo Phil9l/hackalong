@@ -6,34 +6,43 @@ app-logo
 +b.create-field(id='select')
     +e.title Choose a repository
     +e.content
-        +b.repo-element(*ngFor='let repository of repositories', (click)='selectRepository(repository)', [class.repo-element--selected]='repository.selected')
+        +e.busy-indicator(*ngIf='busy.repositories')
+            +busy-indicator
+        +b.repo-element(*ngFor='let repository of repositories',
+                        (click)='selectRepository(repository)',
+                        [class.repo-element--selected]='repository.selected')
             +e.A.title {{repository.name}}
 
 +b.issue-list(*ngIf='selectedRepository')
     +e.header Choose issues which will count towards this contest
-    +e.subheader Selected {{selectedRepository.name}} as a contest repo.
+    +e.subheader Selected {{selectedRepository.name}} as a contest repo. Issues choose automatically if score greater than 0
+    +e.busy-indicator(*ngIf='busy.issues')
+        +busy-indicator
 
-
-    +b.issue-element.issue-element--editable(*ngFor='let issue of issues')
+    +b.issue-element.issue-element--editable(*ngFor='let issue of issues', [class.issue-element--zero-points]='issue.hasZeroPoints')
         +e.points
             span((click)='issue.decreasePoints()') –
             | {{issue.points}}
             span((click)='issue.increasePoints()') +
         +e.right
             +e.A.title(href='{{issue.link}}') {{issue.title}}
-            +e.info {{issue.date}}
+            +e.info(*ngIf='issue.date') {{issue.date}}
 
 +b.create-field(*ngIf='selectedRepository')
     +e.title Set deadline for this event
     +e.info You will not be able to edit this later
     +e.content
-        p-calendar([(ngModel)]="end", showTime="true", hourFormat="24")
+        p-calendar([(ngModel)]="start", [minDate]="now", showTime="true", hourFormat="24", placeholder="Start date")
+        br
+        br
+        p-calendar([(ngModel)]="end", [minDate]="start", showTime="true", hourFormat="24", placeholder="End date")
 
 +b.create-field(*ngIf='end')
-    +e.title Add description
+    +e.title Add description and name
     +e.info Markdown is not supported yet
     +e.content
+        +b.INPUT.input(placeholder='Title', [(ngModel)]='title')
         +b.TEXTAREA.input.textarea(placeholder='Tell people about rules, prizes, etc.', [(ngModel)]='description')
 
-+b.create-button(*ngIf='description && description.length')
-    +b.BUTTON.button((click)='createContest()') Create contest
++b.create-button(*ngIf='description?.length')
+    +b.BUTTON.button((click)='registerContest()') Create contest

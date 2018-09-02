@@ -9,7 +9,7 @@ export const environment = {
     mockAnyRequestAsGet: false,
     apiUrls: {
         contests: {
-            all: '/contests/all.json'
+            create: '/register',
         },
         issues: '/issues',
         repositories: '/repositories',

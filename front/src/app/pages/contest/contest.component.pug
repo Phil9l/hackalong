@@ -1,33 +1,45 @@
+include ../../../base
+
 app-logo
 
 ng-container(*appLet="(contest$ | async) as contest")
     ng-container(*ngIf='contest')
-        .contest-header
-            .contest-header__image
+        +b.contest-header
+            +e.image
                 img([src]='contest.imageURL | defaultImage', alt='')
-            .contest-header__right
-                .contest-header__title {{contest.title}}
-                .contest-header__info
+            +e.right
+                +e.title {{contest.title}}
+                +e.info
                     | for
                     |
-                    a([href]='"http://github.com/" + contest.link', target='_blank') {{contest.owner}}
-        .contest-deadline
-            .contest-deadline__icon
-            .contest-deadline__text To {{contest.end | date: 'fullDate'}}
-        .contest-description
-            .contest-description__header About
-            .contest-description__content
+                    a([href]='"http://github.com/" + contest.owner + "/" + contest.repository', target='_blank') {{contest.owner}}
+        +b.contest-deadline
+            +e.icon
+                i.pi.pi-calendar
+            +e.text From {{contest.start | date: 'fullDate'}} to {{contest.end | date: 'fullDate'}}
+        +b.contest-description
+            +e.header About
+            +e.content
                 p {{contest.description}}
-        .issue-list
-            .issue-list__header Open issues
-            .issue-list__subheader Earn points by closing issues
-            .issue-element(*ngFor='let issue of issues')
-                .issue-element__points {{issue.points}}p
-                .issue-element__right
-                    a.issue-element__title([href]='issue.href') {{issue.description}}
-                    .issue-element__info Opened on Aug 11
-        .contest-leaderboard
-            .contest-leaderboard__header Leaderboard
-            .contest-leaderboard__element(*ngFor='let user of contest.participants')
+
+        +b.issue-list
+            +e.header Open issues
+            +e.subheader Earn points by closing issues
+
+            ng-container(*ngIf='!issues?.length') There are no active issues here :(
+
+            +e.busy-indicator(*ngIf='busy.issues')
+                +busy-indicator
+
+            +b.issue-element(*ngFor='let issue of issues')
+                +e.points {{issue.points}}p
+                +e.right
+                    +e.A.title([href]='issue.href') {{issue.title}}
+                    +e.info Opened on {{issue.createdAt | date: 'MMM L'}}
+
+        +b.contest-leaderboard
+            +e.header Leaderboard
+            ng-container(*ngIf='!contest?.participants?.length') There are no participants :(
+            +e.element(*ngFor='let user of contest.participants')
                 span {{user.points}}
                 a(href='https://github.com/Phil9l', target='_blank') {{user.nickname}}

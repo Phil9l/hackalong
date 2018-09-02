@@ -10,7 +10,7 @@ export class Contest {
     imageURL: string;
     description: string;
     isFinished: boolean;
-    link: string;
+    repository: string;
     owner: string;
     urlName: string;
 
@@ -19,13 +19,13 @@ export class Contest {
         this.title = data.title || '';
         this.start = new Date(data.start);
         this.end = new Date(data.end);
-        this.link = data.link || '';
+        this.repository = data.repository || '';
         this.owner = data.owner || '';
         this.imageURL = data.imageURL || '';
         this.description = data.description || '';
         this.isFinished = data.isFinished || data.is_finished;
 
-        const users = Object.keys(data.users);
+        const users = data.users ? Object.keys(data.users) : [];
         this.participants = users.map(user => new Participant({ nickname: user, points: data.users[user] }));
         this.urlName = StringUtils.toKebabCase(data.title);
     }
